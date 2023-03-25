@@ -1,0 +1,10 @@
+---
+database:
+  host: "localhost:27017"
+  database: "go-tour-migration-test"
+  user: "root"
+  password: "admin123"
+  max_pool_size: 10
+
+server:
+  port: 8083

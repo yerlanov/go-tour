@@ -1,0 +1,12 @@
+{
+    "name": "go-tour-migration",
+    "version": "1.0.0",
+    "description": "MongoDB migration using migrate-mongo",
+    "main": "index.js",
+    "scripts": {
+        "start": "migrate-mongo up"
+    },
+    "dependencies": {
+        "migrate-mongo": "^8.1.3"
+    }
+}

@@ -1,0 +1,19 @@
+---
+database:
+  host: "localhost:27017"
+  database: "go-tour-migration-test"
+  user: "root"
+  password: "admin123"
+  max_pool_size: 10
+
+session:
+  secret: "mysecret"
+
+social:
+  google:
+    client_id: "749018139237-j80kgl00181m8m8rbgnujjd71m04tlmr.apps.googleusercontent.com"
+    client_secret: "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"
+    redirect_url: "http://localhost:8080/auth/google/callback"
+
+server:
+  port: 8080
