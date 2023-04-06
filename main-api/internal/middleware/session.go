@@ -3,7 +3,7 @@ package middleware
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"github.com/yerlanov/go-tour/main-api/internal/session"
+	"github.com/yerlanov/go-tour/common/session"
 	"go.mongodb.org/mongo-driver/mongo"
 	"google.golang.org/appengine/log"
 )
@@ -33,7 +33,7 @@ func SessionMiddleware(s session.Session) gin.HandlerFunc {
 			Values:    make(map[string]interface{}),
 		}
 
-		ctx.SetCookie("session", newSession.SessionID, 3600*8, "/", "", true, true)
+		ctx.SetCookie("session", newSession.SessionID, 36000, "/", "", false, true)
 		err = s.Set(ctx, newSession)
 		if err != nil {
 			log.Errorf(ctx, "session.Set: %v", err)

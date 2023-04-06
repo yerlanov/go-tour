@@ -23,7 +23,7 @@ services:
 
   application:
     build:
-      context: ./go-tour
+      context: ./main-api
     depends_on:
       - mongo
       - migration

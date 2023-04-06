@@ -2,10 +2,10 @@ package middleware
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/yerlanov/go-tour/main-api/internal/session"
+	"github.com/yerlanov/go-tour/common/session"
 )
 
-func AuthMiddleware(s session.Session) gin.HandlerFunc {
+func AuthMiddleware() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		content, exists := ctx.Get("session")
 		if !exists {

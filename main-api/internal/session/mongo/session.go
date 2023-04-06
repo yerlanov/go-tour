@@ -2,7 +2,7 @@ package mongo
 
 import (
 	"context"
-	"github.com/yerlanov/go-tour/main-api/internal/session"
+	"github.com/yerlanov/go-tour/common/session"
 	"github.com/yerlanov/go-tour/main-api/internal/storage"
 	repository "github.com/yerlanov/go-tour/main-api/internal/storage/session"
 )

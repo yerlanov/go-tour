@@ -1,0 +1,104 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "hello/hello_world.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Calculator"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/multiply": {
+      "post": {
+        "summary": "SayHello is a rpc call and a option is defined for it",
+        "operationId": "Calculator_Multiply",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/calculatorHelloReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/calculatorHelloRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Calculator"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "calculatorHelloReply": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "calculatorHelloRequest": {
+      "type": "object",
+      "properties": {
+        "nu": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nu2": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "simple message"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}
